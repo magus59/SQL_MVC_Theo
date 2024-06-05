@@ -6,6 +6,6 @@ require_once '../Models/Comptes.php';
 // var_dump(fetchClients());
 // echo '</pre>';
 
-$clients = fetchClients();
+$comptes = fetchComptes();
 
 include '../Views/comptes/index.php';

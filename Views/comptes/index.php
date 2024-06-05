@@ -10,10 +10,10 @@
         <?php
         foreach ($comptes as $compte) {
             echo '<tr>';
-            echo '<td>' . $client["id"] . '</td>';
-            echo '<td>' . $client["NumeroCompte"] . '</td>';
-            echo '<td>' . $client["Solde"] . '</td>';
-            echo '<td>' . $client["id_client"] . '</td>';
+            echo '<td>' . $compte["id"] . '</td>';
+            echo '<td>' . $compte["NumeroCompte"] . '</td>';
+            echo '<td>' . $compte["Solde"] . '</td>';
+            echo '<td>' . $compte["id_client"] . '</td>';
             echo '</tr>';
         }
         ?>
