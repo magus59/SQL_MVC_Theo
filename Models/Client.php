@@ -10,3 +10,11 @@ function fetchClients()
     $request->execute();
     return $request->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function insertClient($nom, $prenom, $mail, $telephone){
+    $bdd = new BDD;
+    $conn = $bdd->connect();
+    $request =  $conn->prepare('INSERT INTO Clients (nom, prenom, mail, téléphone) VALUES (?,?,?,?)');
+    $request->execute([$nom, $prenom, $mail, $telephone]);
+
+}

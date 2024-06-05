@@ -4,6 +4,7 @@
 // echo '</pre>';
 ?>
 
+<button  onclick="redirectToCreatClient()">Ajouter un client</button>
 
 <table>
     <thead>
@@ -27,3 +28,9 @@
         ?>
     </tbody>
 </table>
+
+<script type="text/javascript">
+    function redirectToCreatClient(){
+        window.location.replace('../Controllers/ClientController.php?action=create')
+    }
+</script>
