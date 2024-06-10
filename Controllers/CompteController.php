@@ -22,7 +22,7 @@ if (!isset($_GET['action'])) {
         // var_dump($_POST);
         $NumeroCompte = $_POST['NumeroCompte'];
         $Solde = $_POST['Solde'];
-        $id_client = $_POST['id_client'];
+        $id_client = $_POST['client'];
         insertCompte($NumeroCompte, $Solde, $id_client);
         header('Location: CompteController.php');
     }
