@@ -18,11 +18,12 @@ function insertCompte($NumeroCompte, $Solde, $id_client){
     $request->execute([$NumeroCompte, $Solde, $id_client]);
 }
 
-function getComptesById($id_client){
+function getComptesById($id){
     $bdd = new BDD;
     $conn = $bdd->connect();
     $request =  $conn->prepare('SELECT id, NumeroCompte, Solde FROM Comptes WHERE id_client = ?;');
-    $request->execute([$id_client]);
-    return $request->fetchAll(PDO::FETCH_ASSOC);
+    $request->execute([$id]);
+    return $request->fetch(PDO::FETCH_ASSOC);
 }
+
 
