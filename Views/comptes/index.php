@@ -15,7 +15,7 @@
             echo '<td>' . $compte["NumeroCompte"] . '</td>';
             echo '<td>' . $compte["Solde"] . '</td>';
             echo '<td>' . $compte["id_client"] . '</td>';
-            echo '<td><button onClick="redirectToDetailsCompte(' . $compte['id'] . ')"> Voir compte </button></td>';
+            echo '<td><button onClick="redirectToDetailsCompte(' . $compte['id_client'] . ')"> Voir compte </button></td>';
             echo '</tr>';
         }
         ?>
@@ -27,7 +27,7 @@
         window.location.replace('../Controllers/CompteController.php?action=create')
     }
 
-    function redirectToDetailsCompte(id) {
-        window.location.replace('../Controllers/CompteController.php?action=details&id=' + id);
+    function redirectToDetailsCompte(id_client) {
+        window.location.replace('../Controllers/CompteController.php?action=details&id=' + id_client);
     }
 </script>
