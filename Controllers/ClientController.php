@@ -1,6 +1,7 @@
 <?php
 
 require_once '../Models/Client.php';
+require_once '../Models/Comptes.php';
 
 if (!isset($_GET['action'])){
     $clients = fetchClients();
@@ -18,6 +19,12 @@ else{
         $telephone = $_POST['telephone'];
         insertClient($nom, $prenom, $mail, $telephone);
         header('Location: ClientController.php');
+        }
+        if ($_GET["action"]=="details"){
+            $id = $_GET['id'];
+            $client = getClientById($id);
+            $comptes = getComptesById($id);
+            include '../Views/clients/deatails.php';
         }
 }
 

@@ -13,6 +13,7 @@
         <th>Prenom</th>
         <th>Mail</th>
         <th>Téléphone</th>
+        <th>Actions</th>
     </thead>
     <tbody>
         <?php
@@ -23,6 +24,7 @@
             echo '<td>' . $client["prenom"] . '</td>';
             echo '<td>' . $client["mail"] . '</td>';
             echo '<td>' . $client["téléphone"] . '</td>';
+            echo '<td><button onClick="redirectToDetailsClient('.$client['id'].')"> Voir client </button></td>';
             echo '</tr>';
         }
         ?>
@@ -31,6 +33,9 @@
 
 <script type="text/javascript">
     function redirectToCreatClient(){
-        window.location.replace('../Controllers/ClientController.php?action=create')
+        window.location.replace('../Controllers/ClientController.php?action=create');
+    }
+    function redirectToDetailsClient(id){
+        window.location.replace('../Controllers/ClientController.php?action=details&id=' + id);
     }
 </script>

@@ -18,3 +18,11 @@ function insertClient($nom, $prenom, $mail, $telephone){
     $request->execute([$nom, $prenom, $mail, $telephone]);
 
 }
+function getClientById($id){
+    $bdd = new BDD;
+    $conn = $bdd->connect();
+    $request =  $conn->prepare('SELECT id, nom, prenom, mail, téléphone FROM Clients WHERE id = ?;');
+    $request->execute([$id]);
+    return $request->fetch(PDO::FETCH_ASSOC);
+
+}
